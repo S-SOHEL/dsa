@@ -1,0 +1,129 @@
+Problem Statement:
+Construct an expression tree from the given prefix expression rg. +--a*bc/def and traverse it
+using postorder traversal (non-recursive) and then delete the entire tree.
+Objectives:
+1. Understand the concept of expression tree
+2. Understand the traversal methods of tree for expressions.
+Outcomes:
+1. Will be able to use concept of expression tree
+2. Will be able to use traversal methods of tree for expressions.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+An expression tree is basically a binary tree which is used to represent expressions. In an
+expression tree, internal nodes correspond to operators and each leaf nodes correspond to
+operands.
+E.g. The expression tree is a binary tree in which each internal node corresponds to the
+operator and each leaf node corresponds to the operand so for example expression tree
+for 3 + ((5+9)*2) would be:
+In expression trees, leaf nodes are operands and non-leaf nodes are operators. That means
+an expression tree is a binary tree where internal nodes are operators and leaves are
+operands. An expression tree consists of binary expressions. But for a unary operator, one
+subtree will be empty.
+Construction of Expression Tree:
+ The user will provide a postfix expression for which the program will construct the
+expression tree.
+ Inorder traversal of binary tree/expression tree will provide Infix expression of the
+given input.
+Example:
+Input: A B C*+ D/
+Output: A + B * C / D
+Step 1: The first three symbols are operands, so create tree nodes and push pointers to
+them onto a stack as shown below.
+Step 2: In the Next step, an operator ‘*’ will going read, so two pointers to trees are
+popped, a new tree is formed and a pointer to it is pushed onto the stack
+Step 3: In the Next step, an operator ‘+’ will read, so two pointers to trees are popped, a
+new tree is formed and a pointer to it is pushed onto the stack.
+Step 4: Similarly, as above cases first we push ‘D’ into the stack and then in the last step
+first, will read ‘/’ and then as previous step topmost element will pop out and then will be
+right subtree of root ‘/’ and other node will be right subtree.
+Final Constructed Expression Tree is:
+Algorithm:
+Begin
+class ExpressionTree which has following functions:
+function push() to push nodes into the tree:
+If stack is null
+then push the node as first element
+Else
+push the node and make it top
+function pop() to pop out nodes from the tree:
+If stack is null
+then print underflow
+Else
+Pop out the node and update top
+function insert() to insert characters:
+If it is digit
+then push it.
+Else if it is operator
+Then pop it.
+Else
+Print “invalid Expression”
+function postOrder() for postorder traversal:
+If tree is not empty
+postOrder(ptr->l)
+postOrder(ptr->r)
+Print root as ptr->d
+function inOrder() for inorder traversal:
+If tree is not empty
+inOrder(ptr->l)
+Print root as ptr->d
+inOrder(ptr->r)
+function preOrder() for preorder traversal:
+If tree is not empty
+Print root as ptr->d
+preOrder(ptr->l)
+preOrder(ptr->r)
+End
+Infix Expression:
+When you wish to print the infix expression, an opening and closing parenthesis must be
+added at the beginning and end of each expression. As each subtree of the expression
+tree represents the subexpression, you have to print the opening parenthesis at its start and
+closing parenthesis after iterating all of its children.
+Pseudo Code
+Algorithm infix (T)
+if (T not empty)
+if (T token is operator)
+print (open parenthesis)
+end if
+infix (T left-subtree)
+print (T token)
+infix (T right-subtree)
+if (T token is operator)
+print (close parenthesis)
+end if
+end if
+end infix
+Postfix Expression:
+Every postfix expression is created by postorder traversal of the binary expression tree.
+Remember that it does not require any parenthesis, unlike infix expression.
+Pseudo Code
+Algorithm postfix (T)
+if (T not empty)
+postfix (T left-subtree)
+postfix (T right-subtree)
+print (T token)
+end if
+end postfix
+Prefix Expression:
+Similar to postfix expression, prefix expression is also created by preorder traversal of the
+binary expression tree. Also, it does not require any parenthesis just like postfix
+expression. Check out the pseudo-code for prefix expression below
+Pseudo Code
+Algorithm prefix (T)
+if (T not empty)
+print(T token)
+prefix (T left subtree)
+prefix (T right subtree)
+end if
+end prefix
+Application of Expression Tree:
+ Expression trees enable the richer interaction with the function arguments
+ It can be used to provide generic operators
+ An expression tree is also used as the compiler
+ It is used in dynamic LINQ sorting
+ It is used as symbolic manipulators
+ An expression tree is used as object cloning
+Conclusion: Thus we have implemented expression tree for given expression and we learn
+various methods of tree traversal.

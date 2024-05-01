@@ -1,0 +1,93 @@
+A book consists of chapters, chapters consist of sections and sections consist of subsections.
+Construct a tree and print the nodes. Find the time and space requirements of your method.
+Objectives:
+1. Understand the concept of Tree.
+2. Understand the concept of calculating time and space requirement.
+Outcomes:
+1. Will be able to use concept of Tree
+2. Will be able to calculate time and space requirement
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+A tree is a data structure composed of nodes that has the following characteristics:
+1. Each tree has a root node at the top (also known as Parent Node) containing some value
+(can be any datatype).
+2. The root node has zero or more child nodes.
+3. Each child node has zero or more child nodes, and so on. This creates a subtree in the tree.
+Every node has its own subtree made up of its children and their children, etc. This means that
+every node on its own can be a tree.
+A binary search tree (BST) adds these two characteristics:
+1. Each node has a maximum of up to two children.
+2. For each node, the values of its left descendent nodes are less than that of the current node,
+which in turn is less than the right descendent nodes (if any).
+Basic operations on a BST
+ Create: creates an empty tree.
+ Insert: insert a node in the tree.
+ Search: Searches for a node in the tree.
+ Delete: deletes a node from the tree.
+ Inorder: in-order traversal of the tree.
+ Preorder: pre-order traversal of the tree.
+ Postorder: post-order traversal of the tree.
+Implementation of BST
+Here's a definition for a BST node having some data, referencing to its left and right child nodes.
+struct node {
+int data;
+struct node *leftChild;
+struct node *rightChild;
+};
+Since trees are recursively defined, it's very common to write routines that operate on trees that
+are themselves recursive.
+So for instance, if we want to calculate the height of a tree, that is the height of a root node, We
+can go ahead and recursively do that, going through the tree. So we can say:
+ For instance, if we have a nil tree, then its height is a 0.
+ Otherwise, We're 1 plus the maximum of the left child tree and the right child tree.
+ So if we look at a leaf for example, that height would be 1 because the height of the left
+child is nil, is 0, and the height of the nil right child is also 0. So the max of that is 0, then 1 plus
+0.
+Since trees are recursively defined, it's very common to write routines that operate on trees that
+are themselves recursive.
+So for instance, if we want to calculate the height of a tree, that is the height of a root node, We
+can go ahead and recursively do that, going through the tree. So we can say:
+ For instance, if we have a nil tree, then its height is a 0.
+ Otherwise, We're 1 plus the maximum of the left child tree and the right child tree.
+ So if we look at a leaf for example, that height would be 1 because the height of the left
+child is nil, is 0, and the height of the nil right child is also 0. So the max of that is 0, then 1 plus
+0.
+Height(tree) algorithm
+if tree = nil:
+return 0
+return 1 + Max(Height(tree.left),Height(tree.right))
+Size(tree)algorithm:
+1. If tree is empty then return 0
+2. Else
+(a) Get the size of left subtree recursively i.e., call
+size( tree->left-subtree)
+(a) Get the size of right subtree recursively i.e., call
+size( tree->right-subtree)
+(c) Calculate size of the tree as following:
+tree_size = size(left-subtree) + size(rightsubtree) + 1
+(d) Return tree_size
+Methods for Calculating Time Complexity
+To calculate time complexity, you must consider each line of code in the program. Consider the
+multiplication function as an example. Now, calculate the time complexity of the multiply
+function:
+Let T(n) be a function of the algorithm's time complexity. Lines 1 and 2 have a time complexity
+of O. (1). Line 3 represents a loop. As a result, you must repeat lines 4 and 5 (n -1) times. As a
+result, the time complexity of lines 4 and 5 is O. (n).
+Finally, adding the time complexity of all the lines yields the overall time complexity of the
+multiple function fT(n) = O(n).
+Methods for Calculating Space Complexity
+With an example, you will go over how to calculate space complexity in this section. Here is an
+example of computing the multiplication of array elements:
+Let S(n) denote the algorithm's space complexity. In most systems, an integer occupies 4 bytes of
+memory. As a result, the number of allocated bytes would be the space complexity.
+Line 1 allocates memory space for two integers, resulting in S(n) = 4 bytes multiplied by 2 = 8
+bytes. Line 2 represents a loop. Lines 3 and 4 assign a value to an already existing variable. As a
+result, there is no need to set aside any space. The return statement in line 6 will allocate one more
+memory case. As a result, S(n)= 4 times 2 + 4 = 12 bytes.
+Because the array is used in the algorithm to allocate n cases of integers, the final space
+complexity will be fS(n) = n + 12 = O (n).
+Conclusion: Thus we have implemented tree concept and calculated time and space
+complexity.

@@ -1,0 +1,96 @@
+Problem Statement: Beginning with an empty binary search tree, Construct binary search
+tree by inserting the values in the order given. After constructing a binary tree i.Insert new
+node, ii. Find number of nodes in longest path from root, iii. Minimum data value found
+in the tree, iv. Change a tree so that the roles of the left and right pointers are swapped at
+every node, v. Search a value.
+Pre-requisite:
+• Knowledge of C++ programming
+• Basic knowledge of Binary Tree, Traversal of binary tree
+Objective: To illustrate the binary search tree as ADT and implement various operations on
+it.
+Outcome: Student will be able to create a binary search tree and perform various
+operations on it for solving various problems.
+Theory:
+Binary Tree : A tree is said to be a Binary tree if each node of the tree have maximum of two
+child nodes. The children of the node of binary tree are ordered.
+Binary Search Tree (BST ) : A binary tree in which each internal node x stores an element
+such that the element stored in the left subtree of x are less than or equal to x and elements
+stored in the right subtree of x are greater than or equal to x. This is called binary-searchtree property.
+Operations on Binary search Tree :
+1. Insertion
+Insertion begins as a search would begin; if the root is not equal to the value, we search the
+left or right sub trees as before. Eventually, we will reach an external node and add the value
+as its right or left child, depending on the node's value. In other words, we examine the root
+and recursively insert the new node to the left subtree if the new value is less than the root,
+or the right subtree if the new value is greater than or equal to the root.
+2. Searching :
+Searching a binary tree for a specific value can be a recursive or iterative process. This
+explanation covers a recursive method. We begin by examining the root node. If the tree is
+null, the value we are searching for does not exist in the tree. Otherwise, if the value equals
+the root, the search is successful. If the value is less than the root, search the left subtree.
+Similarly, if it is greater than the root, search the right subtree. This process is
+repeated until the value is found or the indicated subtree is null. If the searched value is not
+found before a null subtree is reached, then the item must not be present in the tree.
+3. Deletion :
+There are three possible cases to consider:
+1. Deleting a leaf (node with no children): Deleting a leaf is easy, as we can simply
+remove it from the tree.
+2. Deleting a node with one child: Remove the node and replace it with its child.
+3. Deleting a node with two children: Call the node to be deleted N. Do not delete N.
+Instead, choose either its in-order successor node or its in-order predecessor node, R.
+Replace the value of N with the value of R, then delete R.
+As with all binary trees, a node's in-order successor is the left-most child of its right
+subtree, and a node's in-order predecessor is the right-most child of its left subtree. In either
+case, this node will have zero or one children. Delete it according to one of the two simpler
+cases above.
+Algorithms for Operations on binary search tree:
+// Create binary search tree
+1. Create ( )
+Step 1: Allocate the memory by using new keyword for a new node. Make its left and
+right node Pointer NULL.
+Step 2: Accept the data from user and store it in the data part of new node.
+Step 3: Check whether the root is pointing to NULL , if it is then assign the value of new
+node Pointer to the root node pointer.
+Step 4: If the root node pointer is not NULL, then define a node pointer (temp) for
+traversing and store Root node address in it.
+Step 5: Compare the values of new node and the node pointed by temp.
+Step 6: If value in new node is greater than the value in temp, then perform
+temp=temp->right otherwise temp=temp->left
+Step 7: Repeat the step 5 and 6 until temp encounters the NULL value.
+Step 8: Link the new node to the parent node of temp properly according to its value.
+// Traverse Binary search tree using Recursive Inorder Traversal
+2. Inorder ( node *temp )
+Step 1: Check whether temp==NULL
+Step 2: If not then call function inorder ( temp->left ).
+Step 3: Display the data and in the temp node.
+Step 4: Call the function inorder ( temp->right).
+//Traverse Binary search tree using Recursive Preorder Traversal
+3. preorder ( node *temp )
+Step 1: Check whether temp==NULL
+Step 2: If not then Display the data in the temp node.
+Step 3: Call function preorder ( temp->left ).
+Step 4: Call the function preorder ( temp->right).
+//Traverse Binary search tree using Recursive Postorder Traversal
+4. postorder ( node *temp )
+Step 1: Check whether temp==NULL
+Step 2: If not then Call function postorder( temp- >left ). Step 3: Call the function postorder
+( temp->right).
+Step 4: Display the data in the temp node
+// Search an element from binary search Tree
+5. search ( )
+Step 1: Accept the data which is to be searched from the user.
+Step 2: Store the address of the root node in the current code pointer ( cn ).
+Step 3: Traverse the tree until the required data and the data in the cn matches.
+If the required data is greater than the word in the cn then perform cn=cn->right
+else
+Perform cn=cn->left
+If cn encounters the NULL value then come out of the loop statement by using break
+statement.
+Step 4: Check whether the cn is NULL, if it is then required data is not found in the tree
+else the required data is present in the tree.
+Time complexity:
+Time complexity of the various functions of the binary tree are as follows:
+The overall time complexity of the program is O(n log n).
+Conclusion:
+Thus we studied the binary search tree and its operations and successfully implemented it
+for solving the given problem.

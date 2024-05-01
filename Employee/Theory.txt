@@ -1,0 +1,70 @@
+Problem Statement:
+Company maintains employee information as employee ID, name, designation and salary. Allow
+user to add, delete information of employee. Display information of particular employee. If
+employee does not exist an appropriate message is displayed. If it is, then the system displays
+the employee details. Use index sequential file to maintain the data.
+Objectives:
+1. To understand concept of file organization in data structure.
+2. To understand concept of index sequential file organization.
+Outcomes:
+Student will be able to understand concept of file organization in data structure.
+Software Requirements:
+1. 64-bit Open source Linux or its derivative
+2. Open Source C++ Programming tool like G++/GCC.
+3. Turbo C++ compiler
+Theory:-
+A file is the basic entity for permanent retention of data in secondary storage devices such as
+hard drives, CDs, DVDs, flash drives, and tapes. But, the problem is that the common file imposes
+no structure of data storage and is not fit for high level-data processing. Files store a sequence of
+data as raw data bytes.
+In C++, typically a file is opened if it already exists or created as an object associated to the
+stream is created. The most common stream objects in C++ are: cin, cout, cerr, and clog. These
+objects are created as we include the iostream header into a program. The cin object associates
+with the standard input stream, cout with the standard output stream, and cerr and clog with the
+standard error stream.
+File Processing: There are two indispensable headers that must be included to perform file
+processing in C++: <iostream> and <fstream>. There are three important stream class templates
+in the <fstream> header: the basic_ifstream for performing file input, basic_ofstream for file
+output, and basic_fstream for both file input and output. .
+Note that the ifstream, ofstream, and fstream objects that we often use ina C++ program is
+nothing but a specialization of basic_ifstream, basic_ofstream, and basic_fstream, respectively. The
+<fstream> library provides theses typedef aliases for the basic template specialization classes to
+provide convenience by performing character I/O to and from files.
+Sequential Files: A file created with the help of C++ standard library functions does not impose
+any structure on how the data is to be persisted. However, we are able to impose structure
+programmatically according to the application requirement. Suppose a minimal “payroll”
+application stores an employee record in a sequential file as employee id, name of the employee,
+and salary. The data obtained for each employee constitutes a record. The records are stored and
+written to the file sequentially and retrieved or read from the file in the same manner.
+Opening a File:Here, we have opened the file using an instance of the ofstream class using two
+arguments: filename and opening mode. A file can be opened in different modes, as shown in the
+following table.
+File
+Opening
+mode
+Description
+ios::in Open file for reading data.
+ios::out Creates file if it does not exist. All existing data is
+erased from the file as new data is written into
+the file.
+ios::app Creates file if it does not exist. New data is
+written at the end of the file without disturbing
+the existing data.
+ios::ate Open file for output. Data can be written
+anywhere in the file, similar to append.
+ios::trunc Discard file content, which is the default action
+for ios::out.
+ios::binary Open file in binary (non-text) mode.
+There is an open function that also can be used to open a file and set the mode. This is
+particularly useful when we first create an ofstream object and then open it as follows:
+After creating an ofstream or ifstream object, it typically is checked whether it has successfully
+opened or not. We do this with the following code:
+Data processing occurs after a file has been opened successfully. The stream insertion (>>) and
+extraction (<<) operators are overloaded for convenient writing and reading data to and from a
+file. The file we have created is a simple text file and can be viewed by any text editor.
+Closing a File:A file opened must be closed. In fact, as we invoke the close operation associated
+with the ofstream or ifstream object, it invokes the destructor, which closes the file. The
+operation is automatically invoked as the stream object goes out of scope. As a result, an explicit
+invocation of the close function is optional, but still is good programming practice.
+Conclusion: Thus we have studied and implemented concept of index sequential file
+organization.

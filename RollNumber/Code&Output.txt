@@ -1,0 +1,26 @@
+Enter your choice:7
+minimum no. is:2
+1.Create
+2.Insert
+3.Inorder
+4.Preorder
+5.Postorder
+6.Search
+7.Minimum
+8.Height
+Press 0 to exit
+Enter your choice:8
+Height of tree: 4
+1.Create
+2.Insert
+3.Inorder
+4.Preorder
+5.Postorder
+6.Search
+7.Minimum
+8.Height
+Press 0 to exit
+Enter your choice:0
+--------------------------------
+Process exited after 105.9 seconds with return value 0
+Press any key to continue . . .
